@@ -11,7 +11,7 @@
 <section class="container">
   <Lightboxes
     class="grid grid-cols-none sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4
-             gap-8 md:gap-4 xl:gap-8 2xl:gap-12"
+           gap-8 md:gap-4 xl:gap-8 2xl:gap-12"
     css={{ overlay: 'overflow-offset' }}
     options={{ behaviour: 'loop' }}
     {loader}>
@@ -19,12 +19,13 @@
       {#each thumbnails as thumbnail, idx}
         <LightboxThumbnail>
           <figure>
+            <!-- shadow-lg shadow-slate-700 hover:shadow-slate-900 dark:shadow-slate-500 dark:hover:shadow-slate-300 -->
             <img
               class="lazy
-                       mx-auto mb-2
-                       bg-no-repeat bg-center bg-1/5 bg-loading bg-gray-300 grayscale rounded-md shadow-lg shadow-slate-700
-                       hover:grayscale-0 hover:shadow-slate-900
-                       dark:shadow-slate-500 dark:hover:shadow-slate-300"
+                     mx-auto mb-2
+                     bg-no-repeat bg-center bg-1/5 bg-loading bg-gray-300
+                     rounded-md drop-shadow-lg
+                     grayscale hover:grayscale-0"
               src={placeholder}
               data-src={thumbnail.src}
               width={thumbnail.width}

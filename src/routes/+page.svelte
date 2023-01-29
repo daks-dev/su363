@@ -28,7 +28,9 @@
            flex flex-wrap items-start"
     itemscope
     {itemtype}>
-    <header class="flex flex-col grow mb-5">
+    <header
+      class="flex flex-col grow mb-5"
+      style:--text-shadow-val="7px">
       <h1
         class="mb-8
                font-sans font-extrabold text-shadow
