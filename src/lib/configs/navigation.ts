@@ -19,7 +19,11 @@ const config = {
     links: [
       {
         href: '/privacy',
-        label: 'Политика конфиденциальности'
+        label: 'Конфиденциальность'
+      },
+      {
+        href: '/admin',
+        label: 'ic:outline-settings'
       }
     ]
   }

@@ -48,24 +48,26 @@
 
   <div
     class="content py-4
-           flex flex-col justify-between gap-7
+           flex flex-col justify-between gap-4
            text-base md:text-lg lg:text-xl text-sky-800 dark:text-sky-200 align-middle"
     itemscope
     {itemtype}>
     <a
-      class="hover:text-sky-500"
+      class="px-3 py-2 rounded-lg
+             hover:text-sky-500 hover:bg-slate-500/10"
       href="tel://{telephone.replace(/[\s-()]/g, '')}">
       <Icon
         icon="ic:round-phone-in-talk"
-        class="w-6 h-6 inline -mt-0.5 mr-2" />
+        class="w-7 h-7 inline -mt-1 mr-2" />
       <span itemprop="telephone">{telephone}</span>
     </a>
     <a
-      class="hover:text-sky-500"
+      class="px-3 py-2 rounded-lg
+             hover:text-sky-500 hover:bg-slate-500/10"
       href="mailto:{email}">
       <Icon
         icon="ic:round-mail-outline"
-        class="w-6 h-6 inline -mt-0.5 mr-2" />
+        class="w-7 h-7 inline -mt-1 mr-2" />
       <span itemprop="email">{email}</span>
     </a>
     <div
@@ -75,13 +77,14 @@
       itemtype={address.itemtype}>
       <a
         rel="nofollow noreferrer"
-        class="hover:text-sky-500"
+        class="px-3 py-2 rounded-lg
+               hover:text-sky-500 hover:bg-slate-500/10"
         href={address.url}
         target="_blank"
         itemprop="url">
         <Icon
           icon="ic:outline-location-on"
-          class="w-6 h-6 inline -mt-0.5 mr-2" />
+          class="w-7 h-7 inline -mt-1 mr-2" />
         <span itemprop="postalCode">{address.postalCode}</span>,
         <span itemprop="addressLocality">{address.addressLocality}</span>,
         <span itemprop="streetAddress">{@html address.streetAddress}</span>
