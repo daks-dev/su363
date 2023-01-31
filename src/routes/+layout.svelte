@@ -53,7 +53,7 @@
 
 <Navbar
   class="bg-neutral-50 dark:bg-inherit
-         fixed:bg-neutral-700/80 dark:fixed:bg-slate-700/80
+         fixed:bg-neutral-700/90 dark:fixed:bg-slate-700/90
          shadow-sm dark:shadow-md fixed:shadow-lg"
   {...navigation.navbar} />
 
