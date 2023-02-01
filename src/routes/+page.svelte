@@ -15,7 +15,7 @@
     py-4 px-5 rounded-lg
     text-cyan-600 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-gray-200
     dark:text-slate-400 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700
-    shadow-lg shadow-slate-500/50 hover:shadow-md
+    shadow-md shadow-slate-500/20
   `;
 
   const title = 'СУ 363 • Строительное Управление № 363 Москва';

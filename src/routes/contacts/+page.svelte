@@ -11,7 +11,7 @@
           iconContent: '<strong class="tracking-wider">СУ 363</strong>',
           balloonContentHeader: 'Строительное Управление № 363',
           balloonContentBody:
-            '<img class=mx-auto src=/assets/images/ymap.webp width=192 height=192 />',
+            '<img class=mx-auto src=/images/ymap.webp width=192 height=192 />',
           balloonContentFooter:
             '<div class=text-center>время работы: 9 <sup>00</sup> -- 19 <sup>00</sup></div>'
         },
