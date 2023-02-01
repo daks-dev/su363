@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { YandexMetrikaHit } from 'daks-svelte';
+  import { YandexMetrikaHit, Icon } from 'daks-svelte';
   import HomeGrid from '$lib/components/home';
 
   import type { PageData } from './$types';
@@ -10,6 +10,13 @@
 
   import microdata from '$lib/configs/microdata';
   const { itemtype, name, logo, email, telephone, address } = microdata.organization;
+
+  const button = `
+    py-4 px-5 rounded-lg
+    text-cyan-600 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-gray-200
+    dark:text-slate-400 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700
+    shadow-lg shadow-slate-500/50 hover:shadow-md
+  `;
 
   const title = 'СУ 363 • Строительное Управление № 363 Москва';
   const description =
@@ -24,12 +31,12 @@
 
 <main itemprop="mainContentOfPage">
   <div
-    class="container py-8
+    class="container py-12
            flex flex-wrap items-start"
     itemscope
     {itemtype}>
     <header
-      class="flex flex-col grow mb-5"
+      class="flex flex-col grow mb-8"
       style:--text-shadow-val="7px">
       <h1
         class="mb-8
@@ -58,31 +65,51 @@
         href={`${canonical}${logo}`} />
     </header>
     <div
-      class="grow lg:max-w-xs xl:max-w-sm lg:pt-4 px-2
-             flex flex-col justify-center items-center gap-y-3 lg:gap-y-5
-             text-slate-600 dark:text-slate-400"
+      class="grow lg:max-w-xs xl:max-w-sm lg:pt-4 px-2"
       itemprop="address"
       itemscope
       itemtype={address.itemtype}>
-      <a
-        class="font-semibold
-               text-2xl sm:text-4xl lg:text-3xl xl:text-4xl
-               hover:text-sky-500
-               transition-all duration-200 ease-in-out"
-        href="tel://{telephone.replace(/[\s-()]/g, '')}">
-        {telephone}
-      </a>
-      <a
-        rel="nofollow noreferrer"
-        class="text-center lg:text-start
-               sm:text-lg md:text-xl lg:text-lg xl:text-xl
-               hover:text-sky-500
-               transition-all duration-200 ease-in-out"
-        href={address.url}
-        target="_blank"
-        itemprop="url">
-        <span itemprop="streetAddress">{@html address.streetAddress}</span>
-      </a>
+      <div
+        class="xs:hidden
+               w-full flex flex-row justify-around items-center">
+        <a
+          class={button}
+          href="tel://{telephone.replace(/[\s-()]/g, '')}">
+          <Icon
+            icon="ic:round-phone-in-talk"
+            class="w-16 h-16" />
+        </a>
+        <a
+          class={button}
+          href="mailto:{email}">
+          <Icon
+            icon="ic:round-mail-outline"
+            class="w-16 h-16" />
+        </a>
+      </div>
+      <div
+        class="hidden xs:flex flex-col justify-center items-center gap-y-4 lg:gap-y-5
+               text-slate-600 dark:text-slate-400">
+        <a
+          class="font-semibold
+                 text-2xl sm:text-4xl lg:text-3xl xl:text-4xl
+                 hover:text-sky-500
+                 transition-all duration-200 ease-in-out"
+          href="tel://{telephone.replace(/[\s-()]/g, '')}">
+          {telephone}
+        </a>
+        <a
+          rel="nofollow noreferrer"
+          class="text-center lg:text-start
+                 sm:text-lg md:text-xl lg:text-lg xl:text-xl
+                 hover:text-sky-500
+                 transition-all duration-200 ease-in-out"
+          href={address.url}
+          target="_blank"
+          itemprop="url">
+          <span itemprop="streetAddress">{@html address.streetAddress}</span>
+        </a>
+      </div>
       <meta
         itemprop="postalCode"
         content={address.postalCode} />

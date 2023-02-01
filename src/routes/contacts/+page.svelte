@@ -1,13 +1,7 @@
 <script lang="ts">
-  import { YandexMetrikaHit, YandexMap, Icon } from 'daks-svelte';
-
-  const canonical = new URL(import.meta.env.VITE_APP_CANONICAL).origin;
+  import { Contacts, YandexMetrikaHit, YandexMap } from 'daks-svelte';
 
   import microdata from '$lib/configs/microdata';
-  const { itemtype, name, logo, email, telephone, address } = microdata.organization;
-
-  const title = 'СУ 363 • Контакты';
-  const description = 'Контакты Строительного Управления № 363';
 
   const data = {
     locations: [
@@ -33,6 +27,9 @@
       controls: ['zoomControl', 'fullscreenControl']
     }
   };
+
+  const title = 'СУ 363 • Контакты';
+  const description = 'Контакты Строительного Управления № 363';
 </script>
 
 <YandexMetrikaHit
@@ -46,60 +43,9 @@
     <h1 class="title">Контакты</h1>
   </header>
 
-  <div
-    class="content py-4
-           flex flex-col justify-between gap-4
-           text-base md:text-lg lg:text-xl text-sky-800 dark:text-sky-200 align-middle"
-    itemscope
-    {itemtype}>
-    <a
-      class="px-3 py-2 rounded-lg
-             hover:text-sky-500 hover:bg-slate-500/10"
-      href="tel://{telephone.replace(/[\s-()]/g, '')}">
-      <Icon
-        icon="ic:round-phone-in-talk"
-        class="w-7 h-7 inline -mt-1 mr-2" />
-      <span itemprop="telephone">{telephone}</span>
-    </a>
-    <a
-      class="px-3 py-2 rounded-lg
-             hover:text-sky-500 hover:bg-slate-500/10"
-      href="mailto:{email}">
-      <Icon
-        icon="ic:round-mail-outline"
-        class="w-7 h-7 inline -mt-1 mr-2" />
-      <span itemprop="email">{email}</span>
-    </a>
-    <div
-      style:display="contents"
-      itemprop="address"
-      itemscope
-      itemtype={address.itemtype}>
-      <a
-        rel="nofollow noreferrer"
-        class="px-3 py-2 rounded-lg
-               hover:text-sky-500 hover:bg-slate-500/10"
-        href={address.url}
-        target="_blank"
-        itemprop="url">
-        <Icon
-          icon="ic:outline-location-on"
-          class="w-7 h-7 inline -mt-1 mr-2" />
-        <span itemprop="postalCode">{address.postalCode}</span>,
-        <span itemprop="addressLocality">{address.addressLocality}</span>,
-        <span itemprop="streetAddress">{@html address.streetAddress}</span>
-      </a>
-      <meta
-        itemprop="addressRegion"
-        content={address.addressRegion} />
-    </div>
-    <meta
-      itemprop="name"
-      content={name} />
-    <link
-      itemprop="logo"
-      href={`${canonical}${logo}`} />
-  </div>
+  <Contacts
+    class="py-4"
+    {microdata} />
 
   <YandexMap {data} />
 </main>
