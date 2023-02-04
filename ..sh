@@ -14,7 +14,6 @@ until [ $ac = "-" ]; do
     echo -e "";
     echo -e "7 : generate:sitemap";
     echo -e "";
-    echo -e "9 : gzipper:compress";
     echo -e "0 : clean";
     echo -e "";
     echo -e "m : memcached:restart";
@@ -51,10 +50,6 @@ until [ $ac = "-" ]; do
         "7")
             echo -e "> generate:sitemap";
             npm run generate:sitemap;;
-
-        "9")
-            echo -e "> gzipper:compress";
-            npm run compress;;
 
         "0")
             echo -e "> clean";
