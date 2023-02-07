@@ -8,8 +8,7 @@
   import '../app.css';
   import '$iconify';
 
-  import app from '$lib/configs/app';
-  import navigation from '$lib/configs/navigation';
+  import { app, nav } from '$lib/configs';
 
   // window.matchMedia('(prefers-color-scheme: dark)').matches
   if (!import.meta.env.SSR) {
@@ -49,13 +48,13 @@
 
 <Footer
   class="bg-neutral-200/50 dark:bg-inherit"
-  {...navigation.footer} />
+  {...nav.footer} />
 
 <Navbar
   class="bg-neutral-50 dark:bg-inherit
-         onscroll:bg-neutral-700/90 dark:onscroll:bg-slate-700/90
+         onscroll:bg-neutral-50/95 dark:onscroll:bg-slate-700/95
          shadow-sm dark:shadow-md onscroll:shadow-lg"
-  {...navigation.navbar} />
+  {...nav.navbar} />
 
 <ScreenBlock class="bg-neutral-100 dark:bg-gray-800" />
 
