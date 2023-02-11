@@ -1,6 +1,12 @@
 <script lang="ts">
-  import LazyLoad from 'vanilla-lazyload';
-  import { Navbar, Footer, RouteTransition, ScreenBlock, YandexMetrikaInit } from 'daks-svelte';
+  import {
+    lazyload,
+    Navbar,
+    Footer,
+    RouteTransition,
+    ScreenBlock,
+    YandexMetrikaInit
+  } from 'daks-svelte';
 
   import type { PageData } from './$types';
   export let data: PageData;
@@ -16,11 +22,7 @@
       localStorage.setItem('color-theme', 'dark');
       document.documentElement.classList.add('dark');
     }
-    if (!document.lazyloadInstance)
-      document.lazyloadInstance = new LazyLoad({
-        // use_native: true,
-        threshold: 0
-      });
+    document.lazyload ??= lazyload();
   }
 </script>
 

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { YandexMetrikaHit, Icon } from 'daks-svelte';
-  import HomeGrid from '$lib/components/home';
+  import { YandexMetrikaHit, Gallery, Icon } from 'daks-svelte';
 
   import type { PageData } from './$types';
   export let data: PageData;
@@ -22,7 +21,7 @@
   const description =
     'Строительство и ремонт, строительный и технический надзор в Москве. Строительное Управление № 363';
 
-  onMount(() => document?.lazyloadInstance?.update());
+  onMount(() => document?.lazyload.update());
 </script>
 
 <YandexMetrikaHit
@@ -122,5 +121,11 @@
     </div>
   </div>
 
-  <HomeGrid {data} />
+  <Gallery
+    class="container gap-8 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+    {...data}
+    grid
+    rounded
+    shadow
+    grayscale />
 </main>

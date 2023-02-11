@@ -2,6 +2,7 @@
   "ic": [
     "outline-location-on",
     "outline-settings",
+    "round-error-outline",
     "round-mail-outline",
     "round-menu",
     "round-phone-in-talk",
@@ -11,8 +12,11 @@
     "twotone-light-mode"
   ],
   "line-md": [
+    "alert-circle-twotone",
     "home-simple",
-    "home-simple-twotone"
+    "home-simple-twotone",
+    "moon-to-sunny-outline-loop-transition",
+    "sunny-outline-to-moon-loop-transition"
   ],
   "mdi": [
     "transfer-up"

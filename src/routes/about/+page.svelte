@@ -5,7 +5,7 @@
   const title = 'СУ 363 • О предприятии';
   const description = 'О предприятии Строительное Управление № 363';
 
-  onMount(() => document?.lazyloadInstance?.update());
+  onMount(() => document?.lazyload.update());
 </script>
 
 <YandexMetrikaHit
