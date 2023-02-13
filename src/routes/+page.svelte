@@ -1,9 +1,10 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { YandexMetrikaHit, Gallery, Icon } from 'daks-svelte';
+  import { YandexMetrikaHit, LightboxKit, Icon } from 'daks-svelte';
 
   import type { PageData } from './$types';
   export let data: PageData;
+  const { images, thumbnails, labels } = data;
 
   const canonical = new URL(import.meta.env.VITE_APP_CANONICAL).origin;
 
@@ -30,8 +31,9 @@
 
 <main itemprop="mainContentOfPage">
   <div
-    class="container py-12
-           flex flex-wrap items-start"
+    class="
+      container py-12
+      flex flex-wrap items-start"
     itemscope
     {itemtype}>
     <header
@@ -46,8 +48,9 @@
         <span class="text-gray-600">363</span>
       </h1>
       <h2
-        class="ml-2
-               text-shadow text-xl sm:text-2xl md:text-3xl 2xl:text-4xl">
+        class="
+          ml-2
+          text-shadow text-xl sm:text-2xl md:text-3xl 2xl:text-4xl">
         Строительное Управление №&nbsp;363 Москва
       </h2>
       <meta
@@ -69,14 +72,15 @@
       itemscope
       itemtype={address.itemtype}>
       <div
-        class="xs:hidden
-               w-full flex flex-row justify-around items-center">
+        class="
+          xs:hidden
+          w-full flex flex-row justify-around items-center">
         <a
           class={button}
           href="tel://{telephone.replace(/[\s-()]/g, '')}">
           <Icon
-            icon="ic:round-phone-in-talk"
-            class="w-16 h-16" />
+            class="w-16 h-16"
+            icon="ic:round-phone-in-talk" />
         </a>
         <a
           class={button}
@@ -87,22 +91,25 @@
         </a>
       </div>
       <div
-        class="hidden xs:flex flex-col justify-center items-center gap-y-4 lg:gap-y-5
-               text-slate-600 dark:text-slate-400">
+        class="
+          hidden xs:flex flex-col justify-center items-center gap-y-4 lg:gap-y-5
+          text-slate-600 dark:text-slate-400">
         <a
-          class="font-semibold
-                 text-2xl sm:text-4xl lg:text-3xl xl:text-4xl
-                 hover:text-sky-500
-                 transition-all duration-200 ease-in-out"
+          class="
+            font-semibold
+            text-2xl sm:text-4xl lg:text-3xl xl:text-4xl
+            hover:text-sky-500
+            transition-all duration-200 ease-in-out"
           href="tel://{telephone.replace(/[\s-()]/g, '')}">
           {telephone}
         </a>
         <a
           rel="nofollow noreferrer"
-          class="text-center lg:text-start
-                 sm:text-lg md:text-xl lg:text-lg xl:text-xl
-                 hover:text-sky-500
-                 transition-all duration-200 ease-in-out"
+          class="
+            text-center lg:text-start
+            sm:text-lg md:text-xl lg:text-lg xl:text-xl
+            hover:text-sky-500
+            transition-all duration-200 ease-in-out"
           href={address.url}
           target="_blank"
           itemprop="url">
@@ -121,9 +128,11 @@
     </div>
   </div>
 
-  <Gallery
+  <LightboxKit
     class="container gap-8 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
-    {...data}
+    {images}
+    {thumbnails}
+    {labels}
     grid
     rounded
     shadow

@@ -43,7 +43,7 @@ export const squares = async () => [
   (await import('$lib/assets/images/presentation/11.png?w=320&h=320&webp')).default
 ];
 
-export const info = [
+export const labels = [
   {
     title: 'Бизнес-центр «Высота»',
     subtitle: 'Москва, пос.&nbsp;Газопровод',
@@ -131,3 +131,9 @@ export const info = [
     period: 2019
   }
 ];
+
+export default async () => ({
+  images: await sources(),
+  thumbnails: await squares(),
+  labels
+});
