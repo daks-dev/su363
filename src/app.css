@@ -1,4 +1,4 @@
-/* @import 'daks-svelte/fonts/open-sans/variable'; */
+@import 'daks-svelte/fonts/open-sans/variable';
 @import 'daks-svelte/tailwindcss';
 
 @layer base {
@@ -13,7 +13,7 @@
 }
 
   h1 {
-    @apply font-bold tracking-wide
+    @apply tracking-wide
            text-3xl sm:text-4xl md:text-4.5xl lg:text-5xl
            text-gray-500 dark:text-gray-300;
   }
@@ -29,12 +29,6 @@
 
   h4 {
     @apply text-xl;
-  }
-
-  h2,
-  h3,
-  h4 {
-    @apply font-semibold;
   }
 }
 

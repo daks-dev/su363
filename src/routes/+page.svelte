@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import { YandexMetrikaHit, LightboxKit, Icon } from 'daks-svelte';
 
   import type { PageData } from './$types';
@@ -21,8 +20,6 @@
   const title = 'СУ 363 • Строительное Управление № 363 Москва';
   const description =
     'Строительство и ремонт, строительный и технический надзор в Москве. Строительное Управление № 363';
-
-  onMount(() => document?.lazyload.update());
 </script>
 
 <YandexMetrikaHit
@@ -40,9 +37,10 @@
       class="flex flex-col grow mb-8"
       style:--text-shadow-val="7px">
       <h1
-        class="mb-8
-               font-sans font-extrabold text-shadow
-               text-7xl sm:text-9xl"
+        class="
+          mb-8
+          font-extrabold text-shadow
+          text-7xl sm:text-9xl"
         itemprop="name">
         <span class="text-rose-700">СУ</span>
         <span class="text-gray-600">363</span>
