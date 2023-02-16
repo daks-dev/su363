@@ -1,6 +1,14 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { YandexMetrikaHit } from 'daks-svelte';
+  import { YandexMetrikaHit, Async, CarouselKit } from 'daks-svelte';
+
+  import { screens } from '$lib/assets/images/presentation';
+  const getter = async () => ({
+    images: await screens()
+  });
+
+  const show = (x: number): number =>
+    (x < 640 && 1) || (x < 768 && 2) || (x < 1024 && 3) || (x < 1280 && 4) || 5;
 
   const title = 'СУ 363 • О предприятии';
   const description = 'О предприятии Строительное Управление № 363';
@@ -15,7 +23,7 @@
 <svelte:body itemtype="https://schema.org/AboutPage" />
 
 <main itemprop="mainContentOfPage">
-  <header class="content">
+  <header class="content xs:mb-12">
     <h1
       class="title"
       itemprop="name">
@@ -23,10 +31,25 @@
     </h1>
   </header>
 
+  <Async
+    let:value
+    {getter}>
+    <CarouselKit
+      class="hidden xs:block mb-8 drop-shadow-md"
+      {...value}
+      {show}
+      ratio={16 / 9}
+      duration={12000}
+      controls="play mouse"
+      progress
+      stream
+      check />
+  </Async>
+
   <div class="content readable">
     <h2 class="mb-4">Основные направления деятельности:</h2>
 
-    <ul class="pl-8 leading-7">
+    <ul class="pl-6 -indent-4 leading-7">
       <li>Снос зданий и сооружений;</li>
       <li>Вырубка деревьев, кустарников и корчевка пней. Земляные работы;</li>
       <li>Устройство свайных оснований и фундаментов;</li>
@@ -39,7 +62,7 @@
       <li>Установка внутренних и наружных дверных блоков, ворот;</li>
       <li>Монтаж вентилируемых фасадов и фасадов по системе "Теплый дом";</li>
       <li>Внутренняя отделка зданий;</li>
-      <li>
+      <li class="">
         Монтаж внутренних инженерных коммуникаций: канализация, отопление, водоснабжение,
         вентиляция, кондиционирование, электромонтажные работы, слаботочные системы, системы
         пожарной безопасности, спринклерное пожаротушение;
