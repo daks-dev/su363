@@ -1,8 +1,9 @@
 
+import { DEV } from 'esm-env';
+import { iconkit, hooks } from 'daks-svelte/dist/server';
 import type { Handle } from '@sveltejs/kit';
-import { iconkit, hooks } from 'daks-svelte/server';
 
-import.meta.env.DEV && iconkit();
+DEV && iconkit();
 
 const redirects: any = {
   // '': ''

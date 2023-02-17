@@ -5,9 +5,9 @@
   export let data: PageData;
   const { images, thumbnails, labels } = data;
 
-  const canonical = new URL(import.meta.env.VITE_APP_CANONICAL).origin;
+  const canonical = process.env.APP_CANONICAL ? new URL(process.env.APP_CANONICAL).origin : '';
 
-  import microdata from '$lib/configs/microdata';
+  import microdata from '$configs/microdata';
   const { itemtype, name, logo, email, telephone, address } = microdata.organization;
 
   const button = `
@@ -29,7 +29,7 @@
 <main itemprop="mainContentOfPage">
   <div
     class="
-      container py-12
+      wrapper py-12
       flex flex-wrap items-start"
     itemscope
     {itemtype}>
@@ -127,12 +127,16 @@
   </div>
 
   <LightboxKit
-    class="container gap-8 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+    class="
+      wrapper
+      sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8"
     {images}
     {thumbnails}
     {labels}
     grid
+    centered
     rounded
     shadow
+    scale
     grayscale />
 </main>

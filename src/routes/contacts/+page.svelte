@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Contacts, YandexMetrikaHit, YandexMap } from 'daks-svelte';
 
-  import microdata from '$lib/configs/microdata';
+  import microdata from '$configs/microdata';
 
   const data = {
     locations: [

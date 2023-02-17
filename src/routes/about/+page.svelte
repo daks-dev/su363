@@ -39,8 +39,8 @@
       {...value}
       {show}
       ratio={16 / 9}
-      duration={12000}
-      controls="play mouse"
+      duration={15000}
+      controls="play"
       progress
       stream
       check />
@@ -49,7 +49,7 @@
   <div class="content readable">
     <h2 class="mb-4">Основные направления деятельности:</h2>
 
-    <ul class="pl-6 -indent-4 leading-7">
+    <ul class="pl-5 sm:pl-6 lg:pl-7 -indent-4 leading-7">
       <li>Снос зданий и сооружений;</li>
       <li>Вырубка деревьев, кустарников и корчевка пней. Земляные работы;</li>
       <li>Устройство свайных оснований и фундаментов;</li>
