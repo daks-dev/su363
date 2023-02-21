@@ -35,7 +35,8 @@
     let:value
     {getter}>
     <CarouselKit
-      class="hidden xs:block mb-8 drop-shadow-md"
+      class="container hidden xs:block mb-8 drop-shadow-md rounded-lg overflow-hidden opa"
+      classes={{progress: 'bottom-0 opacity-50'}}
       {...value}
       {show}
       ratio={16 / 9}
