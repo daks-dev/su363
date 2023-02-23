@@ -1,6 +1,6 @@
 
 import { DEV } from 'esm-env';
-import { iconkit, hooks } from 'daks-svelte/dist/server';
+import { iconkit, hooks } from 'daks-svelte/server';
 import type { Handle } from '@sveltejs/kit';
 
 DEV && iconkit();

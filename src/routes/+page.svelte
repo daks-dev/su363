@@ -30,7 +30,7 @@
   <div
     class="
       wrapper py-12
-      flex flex-wrap items-start"
+      flex flex-wrap items-start cursor-default"
     itemscope
     {itemtype}>
     <header

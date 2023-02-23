@@ -9,8 +9,9 @@
   body {
     @apply relative
       text-gray-800 dark:text-neutral-100
-      bg-neutral-100 dark:bg-gray-800;
-}
+      bg-neutral-100 dark:bg-gray-800
+      snap-start;
+  }
 
   h1 {
     @apply tracking-wide
@@ -33,22 +34,22 @@
 }
 
 @layer utilities {
-  .title {
-    @apply after:content-null after:block after:mt-4
-           after:w-[25vw] sm:after:w-[20vw] lg:after:w-[15vw] 2xl:after:w-[10vw] after:h-[5px]
-           after:bg-cyan-600 after:dark:bg-cyan-700;
-  }
-
-  body.overflow-hidden,
-  body.overflow-hidden .overflow-offset {
-    padding-right: var(--scrollbar-size) !important;
-  }
-
   .min-h-screen--navbar {
     min-height: calc(100vh - var(--navbar-height));
   }
   .max-h-screen--navbar {
     max-height: calc(100vh - var(--navbar-height));
+  }
+
+  .snap-start,
+  .snap-center {
+    scroll-margin-top: var(--navbar-height);
+  }
+
+  .title {
+    @apply after:content-null after:block after:mt-4
+           after:w-[25vw] sm:after:w-[20vw] lg:after:w-[15vw] 2xl:after:w-[10vw] after:h-[5px]
+           after:bg-cyan-600 after:dark:bg-cyan-700;
   }
 }
 
