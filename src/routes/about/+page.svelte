@@ -4,7 +4,7 @@
 
   import { screens } from '$lib/assets/images/presentation';
   const getter = async () => ({
-    images: await screens()
+    dataset: await screens()
   });
 
   const show = (x: number): number =>
@@ -36,7 +36,7 @@
     {getter}>
     <CarouselKit
       class="container hidden xs:block mb-8 drop-shadow-md rounded-lg overflow-hidden opa"
-      classes={{progress: 'bottom-0 opacity-50'}}
+      custom={{progress: '!bottom-0'}}
       {...value}
       {show}
       ratio={16 / 9}
