@@ -23,16 +23,17 @@ const config = {
   kit: {
     alias: {
       $configs: resolve(__dirname, 'src/configs'),
-      $iconify: resolve(__dirname, 'src/lib/assets/iconify')
+      $iconify: resolve(__dirname, 'src/lib/assets/iconify'),
+      $stores: resolve(__dirname, 'src/stores')
     },
 
     adapter: adapter(options),
 
     files: {
-      serviceWorker: 'node_modules/daks-svelte/app/service-worker'
+      serviceWorker: 'node_modules/daks-svelte/dist/app/service-worker'
     }
 
-    // inlineStyleThreshold: 8192
+    // inlineStyleThreshold: Infinity
   }
 };
 

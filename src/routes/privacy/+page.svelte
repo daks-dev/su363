@@ -17,7 +17,8 @@
     <h1
       class="title"
       itemprop="name">
-      Политика конфиденциальности
+      Политика
+      <span class="-xs:text-2xl">конфиденциальности</span>
     </h1>
   </header>
 

@@ -15,7 +15,7 @@
   import '../app.css';
   import '$iconify';
 
-  import { app, nav } from '$configs';
+  import { app, nav, map } from '$configs';
 
   // window.matchMedia('(prefers-color-scheme: dark)').matches
   if (BROWSER) {
@@ -58,6 +58,7 @@
          onscroll:bg-neutral-50/95 dark:onscroll:bg-slate-700/95
          shadow-sm dark:shadow-md onscroll:shadow-lg"
   {...nav.navbar}
+  {map}
   centered />
 
 <ScreenBlock class="bg-neutral-100 dark:bg-gray-800" />

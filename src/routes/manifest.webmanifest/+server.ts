@@ -50,9 +50,10 @@ const data = {
 
 export const prerender = true;
 
-export const GET = function get({ setHeaders }: unknown) {
-  setHeaders({
-    'content-type': 'application/manifest+json'
+export async function GET() {
+  return new Response(JSON.stringify(data), {
+    headers: {
+      'Content-Type': 'application/manifest+json'
+    }
   });
-  return new Response(JSON.stringify(data));
-};
+}

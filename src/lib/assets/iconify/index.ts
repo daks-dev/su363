@@ -1,4 +1,4 @@
-//import { DEV } from 'esm-env';
+import { DEV } from 'esm-env';
 import { addCollection } from '@iconify/svelte/offline';
 
 import bundles from './bundles.json';
@@ -21,4 +21,4 @@ import './custom/blocks-scale';
 
 export default custom;
 
-console.debug('CSR iconify');
+DEV && console.debug('CSR iconify');
