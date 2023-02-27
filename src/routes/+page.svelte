@@ -33,15 +33,17 @@
       flex flex-wrap items-start cursor-default"
     itemscope
     {itemtype}>
+    <!-- style:--text-shadow-color="#222" -->
     <header
       class="flex flex-col grow mb-8"
-      style:--text-shadow-val="7px">
+      style:--text-shadow-val="5px">
       <h1
         class="
           mb-8
           font-extrabold text-shadow
           text-7xl sm:text-9xl"
-        itemprop="name">
+        itemprop="name"
+        style:--text-shadow-color="#222">
         <span class="text-rose-700">СУ</span>
         <span class="text-gray-600">363</span>
       </h1>

@@ -1,3 +1,4 @@
+import { Nav } from 'daks-svelte';
 import type { NavSite } from 'daks-svelte/types';
 
 const config: NavSite = {
@@ -11,10 +12,6 @@ const config: NavSite = {
         href: '/contacts',
         label: 'Контакты'
       }
-    ],
-    pages: [
-      '/about',
-      '/contacts'
     ]
   },
   footer: {
@@ -31,16 +28,14 @@ const config: NavSite = {
         href: '/admin',
         label: 'ic:outline-settings'
       }
-    ],
-    pages: [
-      '/privacy'
     ]
   }
 };
 
 export const map = [
-  ...(config.navbar.pages ?? config.navbar.links.map((el) => el.href)),
-  ...(config.footer.pages ?? [])
-];
+  ...Nav.map(config.navbar.links),
+  ...Nav.map(config.footer.links ?? []),
+  ...(config.allow ?? [])
+].filter((el, idx, arr) => arr.indexOf(el) === idx);
 
 export default config;
